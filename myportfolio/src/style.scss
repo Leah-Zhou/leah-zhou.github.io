@@ -1,0 +1,42 @@
+$darkblue: #1E2D3A;
+$yellow: #EFCF47;
+$white: #FCFCFA;
+$black: #020202;
+$iconSize: 50px;
+$square-size:10px;
+
+body{
+  background-color: $darkblue;
+  color:$white;
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+nav {
+  ul{
+  padding-inline-start: 0px;
+  margin:10px;
+  display: grid;
+  justify-content: start;
+  grid-template-columns: 1fr auto;
+  justify-items: start;
+  align-items: center;
+ }
+}
+li{
+  list-style: none;
+}
+.icon-logo{
+  width: $iconSize;
+}
+.menu{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.menu-square{
+  width: $square-size;
+  height: $square-size;
+  background-color: $yellow;
+  border:2px solid $black;
+
+}
