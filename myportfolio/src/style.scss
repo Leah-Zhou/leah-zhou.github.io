@@ -9,7 +9,18 @@ $mainFontSize: 14px;
 $sFontSize: 10px;
 
 
-
+@mixin absolute($top:null,$left:null,$right:null,$bottom:null){
+  position: absolute;
+  top:$top;
+  left:$left;
+  right:$right;
+  bottom:$bottom;
+}
+@mixin fontStyle($size:null,$weight:null,$color:$white){
+  font-size: $size;
+  font-weight: $weight;
+  color:$color;
+}
 body{
   background-color: $darkblue;
   color:$white;
@@ -21,7 +32,7 @@ body{
     padding-inline-start:0px;
   }
   h1{
-    font-weight: 700;
+    @include fontStyle($weight:700);
     margin:1em;
     letter-spacing:0.2em;
   }
@@ -57,7 +68,7 @@ li{
 .title-section{
   text-align: center;
   h4{
-    font-weight: 600;
+    @include fontStyle($weight:600);
   }
 }
 .small-words{
@@ -65,11 +76,24 @@ li{
 }
 
 // style for content
+.container{
+ li{
+   margin-top:8em;
+   position: relative;
+ }
+
+}
 .phone{
-  width:100px;
-  position: absolute;
+  width:30%;
   padding-inline-start: 0px;
+  @include absolute(0px,0px);
+  z-index: 200;
 }
 .show-case{
-  width:300px;
+  width:100%;
+  display:block;
+}
+.project-title{
+  @include fontStyle($weight:600,$color:$yellow);
+ 
 }

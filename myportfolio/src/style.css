@@ -15,6 +15,7 @@ body ul {
 
 body h1 {
   font-weight: 700;
+  color: #FCFCFA;
   margin: 1em;
   letter-spacing: 0.2em;
 }
@@ -62,20 +63,35 @@ li {
 
 .title-section h4 {
   font-weight: 600;
+  color: #FCFCFA;
 }
 
 .small-words {
   font-size: 10px;
 }
 
+.container li {
+  margin-top: 8em;
+  position: relative;
+}
+
 .phone {
-  width: 100px;
-  position: absolute;
+  width: 30%;
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 200;
 }
 
 .show-case {
-  width: 300px;
+  width: 100%;
+  display: block;
+}
+
+.project-title {
+  font-weight: 600;
+  color: #EFCF47;
 }
 /*# sourceMappingURL=style.css.map */
