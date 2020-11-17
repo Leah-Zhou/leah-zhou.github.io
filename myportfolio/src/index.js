@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 import './style.css';
-import Nav from './nav';
+import Nav from './components/nav';
 import reportWebVitals from './reportWebVitals';
+import Title from './components/title';
 
 function Page() {
-  return (<div><Nav />
+  return (<div>
+    <Nav />
+    <Title />
   </div> )
 }
 
-ReactDOM.render(<Page />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Page />, document.getElementById('root'));
 
 reportWebVitals();

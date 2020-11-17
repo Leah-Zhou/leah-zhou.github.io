@@ -2,15 +2,26 @@ $darkblue: #1E2D3A;
 $yellow: #EFCF47;
 $white: #FCFCFA;
 $black: #020202;
-$iconSize: 50px;
-$square-size:10px;
+$iconSize: 55px;
+$square-size:13px;
+
+$mainFontSize: 14px;
+$sFontSize: 10px;
+
 
 body{
   background-color: $darkblue;
   color:$white;
   box-sizing: border-box;
   margin:0;
-  padding: 0;
+  padding: 1em;
+  font-family: 'Open Sans', sans-serif;
+
+  h1{
+    font-weight: 700;
+    margin:1em;
+    letter-spacing:0.2em;
+  }
 }
 nav {
   ul{
@@ -38,5 +49,15 @@ li{
   height: $square-size;
   background-color: $yellow;
   border:2px solid $black;
+}
 
+// style for title
+.title-section{
+  text-align: center;
+  h4{
+    font-weight: 600;
+  }
+}
+.small-words{
+  font-size: $sFontSize;
 }

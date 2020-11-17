@@ -4,7 +4,14 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 1em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body h1 {
+  font-weight: 700;
+  margin: 1em;
+  letter-spacing: 0.2em;
 }
 
 nav ul {
@@ -29,7 +36,7 @@ li {
 }
 
 .icon-logo {
-  width: 50px;
+  width: 55px;
 }
 
 .menu {
@@ -40,9 +47,21 @@ li {
 }
 
 .menu-square {
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
   background-color: #EFCF47;
   border: 2px solid #020202;
+}
+
+.title-section {
+  text-align: center;
+}
+
+.title-section h4 {
+  font-weight: 600;
+}
+
+.small-words {
+  font-size: 10px;
 }
 /*# sourceMappingURL=style.css.map */
