@@ -5,11 +5,13 @@ import './style.css';
 import Nav from './components/nav';
 import reportWebVitals from './reportWebVitals';
 import Title from './components/title';
+import Content from './components/content';
 
 function Page() {
   return (<div>
     <Nav />
     <Title />
+    <Content />
   </div> )
 }
 

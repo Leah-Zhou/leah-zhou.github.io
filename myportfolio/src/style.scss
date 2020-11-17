@@ -9,6 +9,7 @@ $mainFontSize: 14px;
 $sFontSize: 10px;
 
 
+
 body{
   background-color: $darkblue;
   color:$white;
@@ -16,7 +17,9 @@ body{
   margin:0;
   padding: 1em;
   font-family: 'Open Sans', sans-serif;
-
+  ul{
+    padding-inline-start:0px;
+  }
   h1{
     font-weight: 700;
     margin:1em;
@@ -25,7 +28,6 @@ body{
 }
 nav {
   ul{
-  padding-inline-start: 0px;
   margin:10px;
   display: grid;
   justify-content: start;
@@ -60,4 +62,14 @@ li{
 }
 .small-words{
   font-size: $sFontSize;
+}
+
+// style for content
+.phone{
+  width:100px;
+  position: absolute;
+  padding-inline-start: 0px;
+}
+.show-case{
+  width:300px;
 }
