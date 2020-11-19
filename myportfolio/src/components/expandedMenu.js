@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 
 
 const ExpandMenu = (props) => {
-  const [opts]=useState([{name:'WORK',link:'/work', key:'work'},{name:'ABOUT', link:'/about',key:'about'},{name:'GALLERY',link:'/gallery',key:'gallery'},{name:'CONTACT', link:'/contact', key:'contact'},]);
+  const [opts]=useState([{name:'WORK',link:'/', key:'work'},{name:'ABOUT', link:'/about',key:'about'},{name:'GALLERY',link:'/gallery',key:'gallery'},{name:'CONTACT', link:'/contact', key:'contact'},]);
   
    const linksStyle={
      textDecoration:'none',

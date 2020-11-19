@@ -18,7 +18,7 @@ function Page() {
     <Router>
      <Nav />
       <Switch>
-      <Route path="/work" exact component={Work} />
+      <Route path="/" exact component={Work} />
       <Route path="/about"  component={About} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/contact" component={Contact} />
