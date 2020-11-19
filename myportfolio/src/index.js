@@ -4,14 +4,27 @@ import ReactDOM from 'react-dom';
 import './style.css';
 import Nav from './components/nav';
 import reportWebVitals from './reportWebVitals';
-import Title from './components/title';
-import Content from './components/content';
+import {BrowserRouter as Router, Switch, Route}from 'react-router-dom';
+import About from './components/about';
+import Work from './components/work';
+import Gallery from './components/gallery';
+import Contact from './components/contact';
+
 
 function Page() {
   return (<div>
-    <Nav />
-    <Title />
-    <Content />
+  
+
+    <Router>
+     <Nav />
+      <Switch>
+      <Route path="/work" exact component={Work} />
+      <Route path="/about"  component={About} />
+      <Route path="/gallery" component={Gallery} />
+      <Route path="/contact" component={Contact} />
+      </Switch>
+    </Router>
+
   </div> )
 }
 

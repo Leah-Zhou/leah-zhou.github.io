@@ -9,14 +9,19 @@ const Content = () => {
   <div>
     <ul className="container">
       <li>
-      <img className="phone" src={Phone} alt="phone" />
-      <img className="show-case" src={ShowCase} alt="green p showcase" />
-      <h3 className="project-title">GREEN P PARKING REDEIGN PROJECT</h3>
+        <h3 className="project-title">GREEN P PARKING REDEIGN PROJECT</h3>
+        <section>
+        <img className="phone" src={Phone} alt="phone" />
+        <img className="show-case" src={ShowCase} alt="green p showcase" />
+        </section>
+      
       </li>
       <li>
-      <img className="phone" src={Phone} alt="phone" />
-      <img className="show-case" src={ShowCase} alt="green p showcase" />
       <h3 className="project-title">GREEN P PARKING REDEIGN PROJECT</h3>
+      <section>
+        <img className="phone" src={Phone} alt="phone" />
+        <img className="show-case" src={ShowCase} alt="green p showcase" />
+        </section>
       </li>
     </ul>
     <ul>
