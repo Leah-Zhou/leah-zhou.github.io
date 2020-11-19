@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.70ba1ca4.chunk.css",
+    "main.js": "/portfolio/static/js/main.68674b6c.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.68674b6c.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.b34b5df6.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.b34b5df6.js.map",
+    "static/js/2.e7725944.chunk.js": "/portfolio/static/js/2.e7725944.chunk.js",
+    "static/js/2.e7725944.chunk.js.map": "/portfolio/static/js/2.e7725944.chunk.js.map",
+    "static/js/3.c20e7d5b.chunk.js": "/portfolio/static/js/3.c20e7d5b.chunk.js",
+    "static/js/3.c20e7d5b.chunk.js.map": "/portfolio/static/js/3.c20e7d5b.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "static/css/main.70ba1ca4.chunk.css.map": "/portfolio/static/css/main.70ba1ca4.chunk.css.map",
+    "static/js/2.e7725944.chunk.js.LICENSE.txt": "/portfolio/static/js/2.e7725944.chunk.js.LICENSE.txt",
+    "static/media/codePen.130d2d2d.svg": "/portfolio/static/media/codePen.130d2d2d.svg",
+    "static/media/coding skills.9385a6e7.svg": "/portfolio/static/media/coding skills.9385a6e7.svg",
+    "static/media/graphic skills.cfd67bcc.svg": "/portfolio/static/media/graphic skills.cfd67bcc.svg",
+    "static/media/instagram.ba034c00.svg": "/portfolio/static/media/instagram.ba034c00.svg",
+    "static/media/linkedin.42d5b25f.svg": "/portfolio/static/media/linkedin.42d5b25f.svg",
+    "static/media/logo.52a01be4.svg": "/portfolio/static/media/logo.52a01be4.svg",
+    "static/media/phoneImg.90877e72.png": "/portfolio/static/media/phoneImg.90877e72.png",
+    "static/media/showCase.921471b0.png": "/portfolio/static/media/showCase.921471b0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b34b5df6.js",
+    "static/js/2.e7725944.chunk.js",
+    "static/css/main.70ba1ca4.chunk.css",
+    "static/js/main.68674b6c.chunk.js"
+  ]
+}
