@@ -10,7 +10,6 @@ const Nav = () => {
     let expandMenu =document.querySelector(".expand-menu");
     squareTop.forEach( 
       square=>{square.classList.toggle('expand')} );
-
       squareBottom.forEach( 
         square=>{square.classList.toggle('move-up')} );
      expandMenu.classList.toggle('expand-show');
