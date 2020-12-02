@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Phone from './imgs/phoneImg.png';
 import HeroBubbleTea from './imgs/heroImg-bubble-teashop.png';
 import HeroGreenP from './imgs/heroImg-greenP.png';
+import HeroWatch from './imgs/watch-gear.jpg';
 import BG from './imgs/background.svg';
 import {Parallax} from 'react-parallax';
 import {Link} from 'react-router-dom';
@@ -28,17 +29,24 @@ const Content = () => {
   <div>
     <Parallax bgImage={BG}>
     <ul className="container" >
-      <Link to="/portfolio/teashop project" style={removeStyle}>
+      <Link to="/teashop project" style={removeStyle}>
       <li style={parallaxUp}>
       <h3 className="project-title">BRANDING PROJECT - UNICUP BUBBLE TEASHOP</h3>
       <img className="show-case" src={HeroBubbleTea} alt="bubble teashop showcase" />
       </li>
       </Link>
 
-      <Link to="/portfolio/GreenP project " style={removeStyle}>
+      <Link to="/greenp project" style={removeStyle}>
       <li style={parallaxUp}>
       <h3 className="project-title">UX REDESIGN PROJECT - GREEN P PARKING APP</h3>
       <img className="show-case" src={HeroGreenP} alt="green p showcase" />
+      </li>
+      </Link>
+
+      <Link to="/watch" style={removeStyle}>
+      <li style={parallaxUp}>
+      <h3 className="project-title">3D Product Modelling - Pocket Watch</h3>
+      <img className="show-case" src={HeroWatch} alt="pockert watch show case" />
       </li>
       </Link>
     </ul>
