@@ -9,19 +9,22 @@ import About from './components/about';
 import Work from './components/work';
 import Gallery from './components/gallery';
 import Contact from './components/contact';
+import Teashop from './components/bubbletea';
+import GreenP from './components/greenP';
 
 
 function Page() {
-  return (<div>
-  
-
+  return (
+  <div className="main-container">
     <Router>
      <Nav />
       <Switch>
       <Route path="/portfolio" exact component={Work} />
       <Route path="/about"  component={About} />
       <Route path="/gallery" component={Gallery} />
-      <Route path="/contact" component={Contact} />
+      <Route path="/portfolio/teashop project" component={Teashop} />
+      <Route path="/portfolio/GreenP project" component={GreenP} />
+      {/* <Route path="/contact" component={Contact} /> */}
       </Switch>
     </Router>
 

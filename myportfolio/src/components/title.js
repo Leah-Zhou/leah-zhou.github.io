@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 const Title = () => {
+
   return ( 
-    <div className="title-section">
-      <h1>DESIGN IT, BUILD IT, LOVE IT!</h1>
-       <h4>Welcome to Leah Zhou's Portfolio</h4>
-       <p className="small-words">Scroll down to see more works</p>
+    <div className="margin-top">
+      <h1 className="fade-in">DESIGN IT, BUILD IT, LOVE IT!</h1>
+       <h4 className="slow-fade">Welcome to Leah Zhou's Portfolio</h4>
+       <p className="small-words slow-fade">Scroll down to see more works</p>
     </div>
    );
 }

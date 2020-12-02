@@ -1,11 +1,19 @@
+// style materials ********************************
 $darkblue: #1E2D3A;
 $yellow: #EFCF47;
 $white: #FCFCFA;
 $black: #020202;
 $iconSize: 55px;
+$headIcon:150px;
+$logoSize:70px;
 $square-size:13px;
 $mainFontSize: 15px;
 $sFontSize: 10px;
+$mediumWeight:600;
+$heavyWeight:800;
+$connerRadius:5px;
+
+
 
 
 @mixin absolute($top:null,$left:null,$right:null,$bottom:null){
@@ -15,11 +23,27 @@ $sFontSize: 10px;
   right:$right;
   bottom:$bottom;
 }
+
+@mixin flexStyle($direction:row, $justify:flex-end){
+  display: flex;
+  position: static;
+  justify-content: $justify;
+  align-items: stretch;  
+  flex-direction: $direction;
+}
+
+@mixin gridStyle($coloum:null, $row:null,){
+ display:grid;
+ grid-template-columns: $coloum;
+ grid-template-rows: $row;
+}
+
 @mixin fontStyle($size:null,$weight:null,$color:$white){
   font-size: $size;
   font-weight: $weight;
   color:$color;
 }
+
 @mixin marginAndPadding($margin:0, $padding:0){
   margin:$margin;
   padding:$padding;
@@ -28,47 +52,120 @@ $sFontSize: 10px;
 // responsive *****************************
 @mixin breakpoint ($point){
   @if $point =="mobile" {
-@media (max-width:800px) {@content}
+@media (max-width:900px) {@content}
 }
   @else if $point =="laptop"{
-   @media (min-width:800px){ @content }
+   @media (min-width:900px){ @content }
 }
 }
 
+@keyframes fade {
+  from{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@mixin animation ($name, $time,$function,$delay,$mode){
+  animation-name:$name;
+  animation-duration: $time;
+  animation-timing-function: $function;
+  animation-delay: $delay;
+  animation-fill-mode: $mode;
+}
+.fade-in{
+  @include animation(fade, 0.8s, ease-in,0s,forwards);
+}
+.slow-fade{
+  opacity: 0;
+  @include animation(fade, 0.8s, ease-in, 0.5s,forwards);
+}
+
+// basic shared style***********************
 
 body{
   @include marginAndPadding();
-  background-color: $darkblue;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+  // background: -webkit-linear-gradient( to left top,$darkblue, $black);
+  // background: -moz-linear-gradient( to left top,$darkblue, $black);
+  // background: -ms-linear-gradient( to left top,$darkblue, $black);
+  // background: -o-linear-gradient( to left top,$darkblue, $black);
+  // background: linear-gradient( to left top,$darkblue, $black);
+  background-color: darken($darkblue, 5%);
   color:$white;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1.5PX;
+  line-height: 1.6;
+  P{
+    @include fontStyle($mainFontSize,200);
+    line-height: 1.8;
+  }
   ul{
     padding-inline-start:0px;
+  }
+  li{
+    list-style: none;
   }
   h1{
     @include fontStyle($weight:700);
     @include marginAndPadding(1em);
     letter-spacing:0.2em;
   }
+  button{
+    padding: 1em 2em;
+    background-color: $yellow;
+    @include fontStyle($mainFontSize, $mediumWeight, $darkblue);
+    border: 2px solid black;
+    border-radius: $connerRadius;
+    margin-top: 3em;
+  }
 }
 
-
+.content-margin{
+  @include marginAndPadding(120px 80px,0px)
+}
+.main-container{
+  // @include breakpoint("mobile"){
+  //   @include gridStyle(1fr)
+  // };
+  @include breakpoint("laptop"){
+    // @include flexStyle();
+    @include gridStyle(0.3fr 1fr);
+  }
+}
 // style for navigation bar*********************
+
+
 nav {
+  @include breakpoint("mobile"){
+    position:fixed;
+    top:0;
+    width:100%;
+    background-color:darken($darkblue,5%);
+    z-index:400;
+  }
   ul{
-  @include marginAndPadding(10px);
-  display: grid;
+  // background-color:darken($pink,5%);
+  @include marginAndPadding(0,10px);
+  @include gridStyle(1fr auto, 1fr);
   justify-content: start;
-  grid-template-columns: 1fr auto;
   justify-items: start;
   align-items: center;
  }
 }
-li{
-  list-style: none;
-}
 .icon-logo{
-  width: $iconSize;
+  opacity: 0;
+  width: $logoSize;
+  @include marginAndPadding(1em);
+  @include animation(fade, 1s, ease-in,0s,forwards);
+  
 }
 .icon{
   width:$iconSize;
@@ -87,71 +184,102 @@ li{
   height: $square-size;
   background-color: $yellow;
   border:2px solid $black;
-  transform: translateY(0px);
+  // transform: translateY(0px);
   transition: transform 0.5s; 
-
 }
-.expand{
-  transform: translateY(9px);
-}
-.move-up{
-  transform: translateY(-9px);
-}
+// .expand{
+//   // transform: scale(0);
+//   transform: translateY(-9px);
+// }
+// .move-up{
+//   transform: translateY(-9px);
+// }
 
 // expanded menu ***********************
 .expand-menu{
-  @include absolute(60px);
-  z-index: 400;
+  @include breakpoint("mobile"){
+  @include absolute(0px);
+  z-index: 500;
   width: 100%;
   height:0;
-  padding-top:10px;
+  // padding-top: 20px;
+  margin-top:20px;
   overflow: hidden;
-  transition: all .4s;
+  transition: height .4s;
+  background-color:darken($darkblue,5%);
+  }
 
   @include breakpoint("laptop"){
     height:100%;
-    display: flex;
-    position: static;
-    justify-content: flex-end;
-    align-items: stretch;  
+    // @include flexStyle(column);
+    position:fixed;
+    z-index: 400;
+    // background-color: darken($darkblue,5%);
   }
   ul{
     @include marginAndPadding(0, 20px);
-    background-color:$darkblue;
   }
   li{
     text-align: center;
     @include marginAndPadding($padding:1.5em);
     @include breakpoint("laptop"){
-      display: inline;
+      // display: inline;
       @include fontStyle($size:14px);
-  
     }
   }
 }
 
+.btn-close{
+  position: absolute;
+  top:20px;
+  right: 20px;
+  div{
+    display: inline-block;
+  }
+  @include breakpoint("laptop"){
+    display: none;
+  }
+}
 .expand-show{
   @include breakpoint("mobile"){
     height:100%;
+    position: fixed;
+    top:0;
   }  
  @include breakpoint("laptop"){
-    display: flex;
-    position: static;
-    justify-content: flex-end;
-    align-items: stretch;  
+    // @include flexStyle(column);
   }
 }
-
+// .non-active{
+//   @include breakpoint("laptop"){
+//   @if(f$heavyWeight){
+//     border: solid $yellow 2px;
+//   }
+//   }
+//   transition: all .5s;
+// }
 .is-active{
-  font-weight: 800;
+  font-weight: $heavyWeight;
+
+  // @include breakpoint("laptop"){
+  //   border:solid white 2px;
+  //   padding: 0.5em;
+  // }
 }
+
+
 
 
 
 
 
 // style for title**********************************
-.title-section{
+.title{
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s;
+}
+.margin-top{
   margin-top:8em;
   text-align: center;
   h4{
@@ -162,45 +290,167 @@ li{
   font-size: $sFontSize;
 }
 
-// style for content************************************
+// style for work page************************************
 .container{
-  margin-left: 2em;
+  @include marginAndPadding(2em, 1em);
   max-width: 1200px;
  li{
    margin-top:8em;
-   display: grid;
-   grid-template-columns: 1fr;
+   @include gridStyle(1fr);
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
    @include breakpoint("laptop"){
-     grid-template-columns: 1fr 2fr;
-     justify-content: end;
-   }
-   section{
-    position: relative;
-    @include breakpoint("laptop"){
-      grid-column: 2/3;
-    }
+     @include gridStyle(1fr 2fr);
    }
  }
+}
 
-}
-.phone{
-  width:30%;
-  padding-inline-start: 0px;
-  @include absolute(0px,0px);
-  z-index: 200;
-}
+
 .show-case{
   width:100%;
-  display:block;
-  margin-right: 0;
 }
 .project-title{
-  @include fontStyle($weight:600,$color:$yellow);
+  @include fontStyle(18px, $weight:600,$color:$white);
+  // line-height: 1.6;
+  letter-spacing: 2px;
+  text-align: center;
   @include breakpoint("laptop"){
+    font-size: 23px;
     grid-column: 1/2;
     display: block;
     margin-top:5em;
   }
 }
 
+// ABOUT page style****************************
+.icon-head{
+  width:$headIcon;
+}
+.style-grid{
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  @include gridStyle(1fr);
+  margin-top:5em;
 
+  @include breakpoint("laptop"){
+    @include gridStyle(0.5fr 1.5fr )
+  }
+}
+
+.contact-section{
+  background-color: $yellow;
+  @include marginAndPadding(0 0 3em 0,2em);
+  @include gridStyle(1fr,1fr 1fr );
+  justify-items: center;
+  align-items: center;
+  @include breakpoint("laptop"){
+    @include gridStyle(2fr 1fr, 1fr);
+  }
+  h1{
+    color:$darkblue;
+  }
+  a{
+    text-decoration: none;
+    padding:1em 2em;
+    border-radius: $connerRadius;
+    background-color: $darkblue;
+    @include fontStyle(18px, $mediumWeight, $yellow)
+  }
+}
+
+// GALLERY ***********************************
+.gallery{
+  @include marginAndPadding(200px 50px);
+  section{
+    margin-bottom: 100px;
+  }
+}
+.imgs-group{
+  @include breakpoint("mobile"){
+    @include flexStyle(column,center);
+  };
+  @include breakpoint("laptop"){
+    @include flexStyle(row,center);
+  }
+}
+.thumbnails{
+  @include breakpoint("mobile"){
+    @include flexStyle(row,space-around);
+  }
+}
+
+.hero-img{
+  position: absolute;
+  top:0;
+  transition:all 0.5s;
+}
+.hero-img:hover{
+  opacity: 0;
+}
+.responsive-style{
+  @include breakpoint("laptop"){
+    @include gridStyle(1fr 1fr, 1fr 1fr );
+  }
+}
+.icon-imgs{
+  @include breakpoint("laptop"){
+    @include gridStyle(1fr 1fr );
+
+  }
+}
+
+
+// project shared style**********************
+.project-container{
+  h1{
+    font-weight: 400;
+    @include breakpoint("laptop"){
+      font-size: 32px;
+    }
+  }
+  text-align: center;
+  @include marginAndPadding(120px 80px);
+
+  @include breakpoint("laptop"){
+    @include marginAndPadding(50px);
+  }
+  section{
+    margin-bottom: 200px;
+  }
+  a{
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border-radius: $connerRadius;
+    @include marginAndPadding(1em, 1em 2em);
+    @include fontStyle(16px,600,$darkblue);
+    background-color: $yellow;
+  }
+}
+.in-row{
+  @include flexStyle(row, center);
+  img{
+    margin-right: 20px;
+  }
+}
+
+.two-columns{
+  @include breakpoint("laptop"){
+    @include gridStyle(1.5fr 2.5fr,1fr);
+    align-items: center;
+  }
+}
+
+// video style ****************************
+.video-wrapper{
+  margin: 50px 10px;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+}
+.video{
+  position: absolute;
+  top: 0;
+  left: 0;
+}

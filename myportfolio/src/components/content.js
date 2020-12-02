@@ -1,31 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Phone from './imgs/phoneImg.png';
-import ShowCase from './imgs/showCase.png';
+import HeroBubbleTea from './imgs/heroImg-bubble-teashop.png';
+import HeroGreenP from './imgs/heroImg-greenP.png';
+import BG from './imgs/background.svg';
+import {Parallax} from 'react-parallax';
+import {Link} from 'react-router-dom';
+
 
 const Content = () => {
+ const [offset, setOffset] =useState(0);
 
+ const removeStyle={textDecoration:'none'}
+
+ const parallaxUp={transform:'translateY(-'+offset*0.6+'px)', backgroundColor:"rgba(225,225,225,0.5)",};
+ const parallaxDown={transform:'translateY('+offset*0.6+'px)', transformDelay:offset*0.2+'s'};
+
+ useEffect(()=>{
+  function handleScroll (){
+    setOffset(window.pageYOffset)
+   }
+   window.addEventListener("scroll", handleScroll);
+
+   return()=>{window.removeEventListener("scroll", handleScroll)}
+ },[])
 
   return ( 
   <div>
-    <ul className="container">
-      <li>
-        <h3 className="project-title">GREEN P PARKING REDEIGN PROJECT</h3>
-        <section>
-        <img className="phone" src={Phone} alt="phone" />
-        <img className="show-case" src={ShowCase} alt="green p showcase" />
-        </section>
-      
+    <Parallax bgImage={BG}>
+    <ul className="container" >
+      <Link to="/portfolio/teashop project" style={removeStyle}>
+      <li style={parallaxUp}>
+      <h3 className="project-title">BRANDING PROJECT - UNICUP BUBBLE TEASHOP</h3>
+      <img className="show-case" src={HeroBubbleTea} alt="bubble teashop showcase" />
       </li>
-      <li>
-      <h3 className="project-title">GREEN P PARKING REDEIGN PROJECT</h3>
-      <section>
-        <img className="phone" src={Phone} alt="phone" />
-        <img className="show-case" src={ShowCase} alt="green p showcase" />
-        </section>
+      </Link>
+
+      <Link to="/portfolio/GreenP project " style={removeStyle}>
+      <li style={parallaxUp}>
+      <h3 className="project-title">UX REDESIGN PROJECT - GREEN P PARKING APP</h3>
+      <img className="show-case" src={HeroGreenP} alt="green p showcase" />
       </li>
+      </Link>
     </ul>
     <ul>
     </ul>
+    </Parallax>
   </div> );
 }
  
