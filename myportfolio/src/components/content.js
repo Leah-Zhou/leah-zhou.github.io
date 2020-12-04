@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Phone from './imgs/phoneImg.png';
 import HeroBubbleTea from './imgs/heroImg-bubble-teashop.png';
+import HeroSurvey from './imgs/survey-hero.png';
 import HeroGreenP from './imgs/heroImg-greenP.png';
 import HeroWatch from './imgs/watch-gear.jpg';
 import BG from './imgs/background.svg';
@@ -29,17 +30,24 @@ const Content = () => {
   <div>
     <Parallax bgImage={BG}>
     <ul className="container" >
-      <Link to="/teashop project" style={removeStyle}>
-      <li style={parallaxUp}>
-      <h3 className="project-title">BRANDING PROJECT - UNICUP BUBBLE TEASHOP</h3>
-      <img className="show-case" src={HeroBubbleTea} alt="bubble teashop showcase" />
-      </li>
-      </Link>
-
       <Link to="/greenp project" style={removeStyle}>
       <li style={parallaxUp}>
       <h3 className="project-title">UX REDESIGN PROJECT - GREEN P PARKING APP</h3>
       <img className="show-case" src={HeroGreenP} alt="green p showcase" />
+      </li>
+      </Link>
+
+      <Link to="/web survey project" style={removeStyle}>
+      <li style={parallaxUp}>
+      <h3 className="project-title">FRONT END DEVELOPMENT PROJECT - ONLINE SURVEY WEBPAGE DESIGN AND DEVELOPMENT</h3>
+      <img className="show-case" src={HeroSurvey} alt="online survey project" />
+      </li>
+      </Link>
+
+      <Link to="/teashop project" style={removeStyle}>
+      <li style={parallaxUp}>
+      <h3 className="project-title">BRANDING PROJECT - UNICUP BUBBLE TEASHOP</h3>
+      <img className="show-case" src={HeroBubbleTea} alt="bubble teashop showcase" />
       </li>
       </Link>
 

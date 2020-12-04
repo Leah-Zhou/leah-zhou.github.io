@@ -70,7 +70,7 @@ const Teashop = () => {
         <div>
         <h1>UX Design</h1>
         <p>Based on the users research and competitive analysis, the strategies for promoting the brand should include:</p>
-          <ul style={{textAlign:"start", lineHeight:"1.6", fontWeight:"300"}}>
+          <ul style={{textAlign:"left", lineHeight:"1.6", fontWeight:"300"}}>
             <li>Encourage social interaction with users</li>
             <li>Promote time senstive deals</li>
             <li>Testimonials and feedbacks</li>

@@ -3,6 +3,7 @@ import Designer from './icons/designer.svg';
 import Coder from './icons/coder.svg';
 import Planter from './icons/planter.svg';
 import UXdesigner from './icons/uxdesigner.svg';
+import Resume from './files/Resume - Leah Zhou.pdf';
 import { NavLink } from 'react-router-dom';
 
 const About = () => {
@@ -13,7 +14,7 @@ const About = () => {
         <h1 style={{fontSize: '64px'}}>Hi,</h1>
         <p>My name is Leah Zhou, a front-end coder and a UX and UI designer with full passion for creating beautiful and interactive design end digital experience.I also love photography and planting.</p>
         <p>My goal is to conntect people with brand and business via design. I believe a good design could increase people's interests and love to the brand or business.</p>
-        <button>Download Resume</button>
+        <a className="link-btn" href={Resume} download>Download Resume</a>
       </section>
 
       <section className="margin-top">

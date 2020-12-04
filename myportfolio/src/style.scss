@@ -419,15 +419,24 @@ nav {
   section{
     margin-bottom: 200px;
   }
-  a{
+  // a{
+  //   text-decoration: none;
+  //   display: inline-block;
+  //   text-align: center;
+  //   border-radius: $connerRadius;
+  //   @include marginAndPadding(1em, 1em 2em);
+  //   @include fontStyle(15px,600,$darkblue);
+  //   background-color: $yellow;
+  // }
+}
+.link-btn {
     text-decoration: none;
     display: inline-block;
     text-align: center;
     border-radius: $connerRadius;
     @include marginAndPadding(1em, 1em 2em);
-    @include fontStyle(16px,600,$darkblue);
+    @include fontStyle(15px,600,$darkblue);
     background-color: $yellow;
-  }
 }
 .in-row{
   @include flexStyle(row, center);
@@ -446,6 +455,7 @@ nav {
 // video style ****************************
 .video-wrapper{
   margin: 50px 10px;
+  justify-content: center;
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
 }

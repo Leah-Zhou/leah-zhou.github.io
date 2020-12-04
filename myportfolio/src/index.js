@@ -12,6 +12,7 @@ import Contact from './components/contact';
 import Teashop from './components/bubbletea';
 import GreenP from './components/greenP';
 import Watch from './components/watch';
+import Survey from './components/survey';
 
 
 function Page() {
@@ -26,6 +27,7 @@ function Page() {
       <Route path="/teashop project" component={Teashop} />
       <Route path="/greenp project" component={GreenP} />
       <Route path="/watch" component={Watch} />
+      <Route path="/web survey project" component={Survey} />
 
       {/* <Route path="/contact" component={Contact} /> */}
       </Switch>
