@@ -32,28 +32,28 @@ const Content = () => {
     <ul className="container" >
       <Link to="/greenp project" style={removeStyle}>
       <li style={parallaxUp}>
-      <h3 className="project-title">UX REDESIGN PROJECT - GREEN P PARKING APP</h3>
+      <h3 className="project-title">UX Redesign Project - Green P Parking App</h3>
       <img className="show-case" src={HeroGreenP} alt="green p showcase" />
       </li>
       </Link>
 
       <Link to="/web survey project" style={removeStyle}>
       <li style={parallaxUp}>
-      <h3 className="project-title">FRONT END DEVELOPMENT PROJECT - ONLINE SURVEY WEBPAGE DESIGN AND DEVELOPMENT</h3>
+      <h3 className="project-title">Front End Development Project - Online Survey Webpage Design And Development</h3>
       <img className="show-case" src={HeroSurvey} alt="online survey project" />
       </li>
       </Link>
 
       <Link to="/teashop project" style={removeStyle}>
       <li style={parallaxUp}>
-      <h3 className="project-title">BRANDING PROJECT - UNICUP BUBBLE TEASHOP</h3>
+      <h3 className="project-title">Branding Project - Unicup Bubble Teashop</h3>
       <img className="show-case" src={HeroBubbleTea} alt="bubble teashop showcase" />
       </li>
       </Link>
 
       <Link to="/watch" style={removeStyle}>
       <li style={parallaxUp}>
-      <h3 className="project-title">3D Product Modelling - Pocket Watch</h3>
+      <h3 className="project-title">3D Product Modeling - Pocket Watch</h3>
       <img className="show-case" src={HeroWatch} alt="pockert watch show case" />
       </li>
       </Link>

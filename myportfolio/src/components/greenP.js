@@ -32,29 +32,29 @@ const GreenP = () => {
     <section style={contentWidth}>
       <h1>Project Introduction</h1>
       <p>
-      The Green P application from the Toronto Parking Authority is an application that assists users to find and pay for their parking spots in Toronto through mobile devices. This project is going to evaluate the efficiency of the searching functions and accessing parking information in the application, identify the potential design problems  and redesign the application to improve the efficiency of searching function. 
+      The green P application from the Toronto parking authority is an application that assists users to find and pay for their parking spots in Toronto through mobile devices. This project is going to evaluate the efficiency of the searching functions and accessing parking information in the application, identify the potential design problems, and redesign the application to improve the efficiency of the searching function. 
       </p>
       <h3>Goal</h3>
-      <p>The goal of the project is improving the efficiency and users satisfaction of the application. </p>
+      <p>The goal of the project is to improve the efficiency of find parking function, and increase user satisfaction with the application. </p>
     </section>
 
     <section style={contentWidth}>
-      <h3>1.  WHAT ARE THE PROBLEMS OF USABILITY?</h3>
-      <h4>-  USER RESEARCH</h4>
-      <p> A user research is an effective way to evaluate the efficiency of the application with its searching and accessing information functions.  The usability test in this research is to let target users use the application to accomplish certain tasks, which includes searching parking spots and accessing needed parking information.</p>
+      <h1>1.  What Are The Problems OF Usability?</h1>
+      <h3>User Research</h3>
+      <p> User research is an effective way to evaluate the efficiency of the application with its searching and accessing information functions. To know the user experience with the app, I launched a usability test that is targeting testing the find parking function of the app. The usability test in this research is to let target users use the application to accomplish specific tasks, which includes searching parking spots and accessing needed parking information.</p>
       <div>
       <a className="link-btn" href={PlanFile} download>Usability Test Plan</a>
       <a className="link-btn" href={Poster} download>Research Poster</a>
       </div>
-      <p>Based on the data analysis collected from the usability test, here are the conclusions of the research.</p>
+      <h3 style={{marginTop:"60px"}}>Based on the data analysis collected from the usability test, here are the conclusions of the research.</h3>
       <ol style={alignLeft}>
-        <li>1. The efficiency of searching function is below high level based on the reviews from participants. </li>
-        <li>2. Accessing the parking information is not easy, especially when finding available parking spots and comparing prices. ​​​​​​​</li>
+        <li>1. The efficiency of find parking function is below a high level based on the reviews from participants. </li>
+        <li>2. Accessing the parking information is not easy, especially when finding available parking spots and comparing parking fees. ​​​​​​​</li>
         <li>
-          3.Searching function is not accessible intuitively​​​​​​​. 
+          3.Find parking function is not accessible intuitively​​​​​​​ on the home page. 
         </li>
         <li>4. Complicated and repeated user flows in accessing parking information.</li>
-        <li>5. Font size of the information is too small to read.</li>
+        <li>5. The font size of the information is too small to read.</li>
         <li>6. Overwhelming information packed in one page is not readable. ​​​​​​​​​​​​​​</li>
       </ol>
       <div>
@@ -65,7 +65,7 @@ const GreenP = () => {
 
     <section style={contentWidth}>
       <h3>Persona and Journey Map</h3>
-      <p>To better present the findings of the research, I came up with two persona Jenny and Steven, who are representing two different groups of target users and their pain points while they are using the Green P parking application.</p>
+      <p>To better present the findings of the research, I came up with two personas Jenny and Steven, who are representing two different groups of target users and their pain points while they are using the Green P parking application.</p>
       <div>
         <div>
         <img src={PersonaJ} alt="persona" style={imgSize} />
@@ -79,16 +79,16 @@ const GreenP = () => {
     </section>
 
     <section style={contentWidth}>
-      <h3>2. HOW TO SOLVE THESE PROBLEMS? </h3>
-      <h4>UX Challenges:</h4>
-      <p>The main challenges are to simplify the user flow in searching parking, and making overwhelming parking information more accessible and readable.</p>
+      <h3>2. How To Solve The UX Problems? </h3>
+      <h4>Challenges:</h4>
+      <p>The main challenges are to simplify the user flow of searching parkings, and making overwhelming parking information more accessible and clear.</p>
       <h4>Solutions:</h4>
-      <p>To solve the UX challenges, I applied different design ways to approach the problems.  </p>
+      <p>To solve the challenges, I applied different design approaches to the problems.  </p>
       <ol style={alignLeft}>
-        <li>1. Search function is redesigned intuitively on the home page, so users could approach it right on the first sight.</li>
-        <li>2. Important parking information is visual on the map page, which help simplify the user flows of accessing information.</li>
-        <li>3. Comparable information are distinguished with different colors, which faster the process of selecting parking spots.</li>
-        <li>4. Font size of the information is adjusted to the readable size. </li>
+        <li>1. The search parking function is redesigned intuitively on the home page. Users could approach it straightway.</li>
+        <li>2. Main parking information is visual on the map page, which helps simplify the user flows of accessing and comparing needed information.</li>
+        <li>3. Comparable information is color-coded, which faster the process of selecting parking spots.</li>
+        <li>4. The font size for the information is adjusted to the readable size. Related information is grouped in space for better visualization. </li>
       </ol>
       <img src={Comparation} alt="user flow comparation" style={imgSize} />
       <div className="video-wrapper">

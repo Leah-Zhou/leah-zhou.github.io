@@ -246,18 +246,8 @@ nav {
     position: fixed;
     top:0;
   }  
- @include breakpoint("laptop"){
-    // @include flexStyle(column);
-  }
 }
-// .non-active{
-//   @include breakpoint("laptop"){
-//   @if(f$heavyWeight){
-//     border: solid $yellow 2px;
-//   }
-//   }
-//   transition: all .5s;
-// }
+
 .is-active{
   font-weight: $heavyWeight;
 
@@ -311,7 +301,7 @@ nav {
   width:100%;
 }
 .project-title{
-  @include fontStyle(18px, $weight:600,$color:$white);
+  @include fontStyle(16px, $weight:400,$color:$white);
   // line-height: 1.6;
   letter-spacing: 2px;
   text-align: center;
@@ -419,22 +409,15 @@ nav {
   section{
     margin-bottom: 200px;
   }
-  // a{
-  //   text-decoration: none;
-  //   display: inline-block;
-  //   text-align: center;
-  //   border-radius: $connerRadius;
-  //   @include marginAndPadding(1em, 1em 2em);
-  //   @include fontStyle(15px,600,$darkblue);
-  //   background-color: $yellow;
-  // }
+
 }
 .link-btn {
     text-decoration: none;
     display: inline-block;
     text-align: center;
     border-radius: $connerRadius;
-    @include marginAndPadding(1em, 1em 2em);
+    width:180px;
+    @include marginAndPadding(1em, 20px);
     @include fontStyle(15px,600,$darkblue);
     background-color: $yellow;
 }

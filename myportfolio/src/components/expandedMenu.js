@@ -29,9 +29,9 @@ const ExpandMenu = (props) => {
         <div className="menu-square"></div>
       </div>
       <ul>
-       {opts.map(opt=>(<NavLink to={opt.link} style={linksStyle} className="non-active" activeClassName="is-active" >
+       {opts.map(opt=>(<NavLink to={opt.link} style={linksStyle}  exact activeClassName="is-active" >
          <li style={{color:" #EFCF47"}} key={opt.key} onClick={props.handleMenu}> {opt.name}</li></NavLink>))}
-        <li key='ins'><a href="#" target="_blank"><img src={INS} alt="intagram" className="icon" /></a></li>
+        <li key='ins'><a href="https://www.instagram.com/leahzzzhou/" target="_blank"><img src={INS} alt="intagram" className="icon" /></a></li>
         <li key='linkedin'><a href="https://www.linkedin.com/in/leah-zhou-853ba8174/" target="_blank"><img src={Linkedin} alt="linkedin" className="icon" /></a></li>
         <li key='codePen'><a href="https://codepen.io/leah-zhou" target="_blank"><img src={CodePen} alt="codePen" className="icon" /></a></li>
        {/* {icons.map(icon=>( <li key={icon.key}><a href="#"><img src={icon.name} className="icon" /></a></li>))} */}

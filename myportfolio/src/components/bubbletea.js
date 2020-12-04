@@ -34,13 +34,13 @@ const Teashop = () => {
 
       <section>
         <h1>Project Concept</h1>
-        <p>This is a branding concept project that aims at create a local bubble teashop brand and promote the brand with its website. The research shows that most of the local bubble teashops are popular because of their signatured drinks, special branding culture, and good customer services. Therefore, the core value of the created brand will be unique good-tasting drinks and customer-centered services.</p>
+        <p>It is a branding concept project that aims to create a local bubble teashop brand and promote the brand with its website. The research shows that most of the local bubble teashops are popular because of their signature drinks, distinctive branding culture, and good customer service. Therefore, the core value of the created brand will be unique high-quality drinks and good customer services.</p>
       </section>
 
       <section className="two-columns">
         <div>
         <h1>Users</h1>
-        <p>The brand and its website are targeting on the young age group who is from 20 to 30 years old. The research shows that this group of people are the main customers in bubble teashops.Personas are representing users' characters</p>
+        <p>The brand and its website are targeting the young age group who is from 20 to 30 years old. The research shows that this group of people are the main customers in bubble teashops. Created personas are representing users' characters.</p>
         </div>
         <div>
           <img src={PersonaOne} alt="persona" style={imgSize} />
@@ -57,10 +57,10 @@ const Teashop = () => {
         </div>
         <div>
           <h1>UI Design</h1>
-          <p>The brand primary colors symbolize fresh, energetic, good health and excitement. It could better convert the   core value into visualization to users.
+          <p>The primary colors of the brand symbolize freshness, energy, good health, and excitement. It could better convert the value into a visualization to users.
           </p>
           <p>
-          The icons and logo are designed with curve lines and round shapes, which represent the smooth texture of the  drinks.
+          The icons and logo are designed with curve lines and round shapes, which represent the smooth texture of the drinks.
           </p>
           {/* <img src={LogoIdeation} alt="logo ideation" style={imgSize}/> */}
           </div>
@@ -69,13 +69,13 @@ const Teashop = () => {
       <section className="two-columns">
         <div>
         <h1>UX Design</h1>
-        <p>Based on the users research and competitive analysis, the strategies for promoting the brand should include:</p>
+        <p>Based on the research on users and competitive analysis, the strategies for promoting the brand should include:</p>
           <ul style={{textAlign:"left", lineHeight:"1.6", fontWeight:"300"}}>
-            <li>Encourage social interaction with users</li>
-            <li>Promote time senstive deals</li>
-            <li>Testimonials and feedbacks</li>
+            <li>Encourage social interaction with users - Provide social platforms for interaction with users.</li>
+            <li>Promote time senstive deals - Update different deals based on the trends</li>
+            <li>Testimonials and feedback - Respect every users' feedback and highlight positive feedback.</li>
           </ul>
-          <a href="https://www.figma.com/file/KzuUiJnLA5z8AYxuiF74uj/bubble-tea-prototype?node-id=0%3A1"  target="_blank">Try Template</a>
+          <a className="link-btn" href="https://www.figma.com/file/KzuUiJnLA5z8AYxuiF74uj/bubble-tea-prototype?node-id=0%3A1"  target="_blank">Try Template</a>
           <h4>Interactive website  -  Coming Soon</h4>
         </div>
       
@@ -90,8 +90,8 @@ const Teashop = () => {
         <div className="two-columns">
           <div>
           <h3>How to come up an impressive brand</h3>
-          <p>In this project, how to narrow down the brand concept for a local bubble teashop is one of the challenges I  was facing. To achicve that, I start brainstorming with sticky notes and drawing my mind map based on the reseach  information, and it helps me come up with various ideas.</p>
-          <p>The next step I tried was pinning out better ideations with feedbacks.Then I start to develop the brand name,  moodboards, logos and UI kit with selected key words.</p>
+          <p>In this project, how to narrow down the brand concept for a local bubble teashop is one of the challenges I  was facing. To achieve that, I start brainstorming with sticky notes and drawing my mind map based on the research  information, and it helps me come up with various ideas.</p>
+          <p>The next step I tried was pinning out better ideations with feedback. Then I start to develop the brand name,  mood boards, logos, and UI kit with selected keywords.</p>
         </div>
         <div>
           <img src={StickyNote} alt="sticky notes" style={{maxWidth:'300px'}}/>
@@ -106,8 +106,8 @@ const Teashop = () => {
 
         <div className="two-columns" style={{marginTop:'80px'}}>
           <div>
-          <h3 className="project-title">How to promote the brand in the website</h3>
-          <p>Contents are the soul of the webstie. Attractive contents could promote the brand effectively. To figure out the solution, I began a competitive website analysis of the competitors. By analysing their website contents, marketing strategies, and social media platforms, I found out users are more interesting with the contents assoicated with product qualitiy, product appearance, brand reputation, promotion and deals. Therefore, the webstie content will be more focusing on demonstrating the high-quality materials and customers feedbacks.To encorage users' interaction with the brand, the website also provide the connection the other social media platforms such as Instagram.</p>
+          <h3 className="project-title">How to promote the brand on the website</h3>
+          <p>Contents are the soul of the website. Attractive content could promote the brand effectively. To figure out the solution, I began a competitive website analysis of the competitors. By analyzing their website contents, marketing strategies, and social media platforms, I found out users are more interested in the contents associated with product quality, product appearance, brand reputation, promotion, and deals. Therefore, the website content will be more focusing on demonstrating high-quality materials and customer feedback. To encourage users to interact with the brand, the website also provides the connection the other social media platforms such as Instagram.</p>
           </div>
 
           <div>

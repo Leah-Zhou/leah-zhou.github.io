@@ -92,7 +92,7 @@ const Gallery = () => {
       </section>
 
       <section>
-        <h2 className="project-title">3D Modelling</h2>
+        <h2 className="project-title">3D Modeling</h2>
         <ul>
         <li>
             <ul className="thumbnails responsive-style">

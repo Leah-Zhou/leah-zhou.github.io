@@ -27,7 +27,7 @@ const Watch = () => {
     <div className="project-container" >
       <section className="project-title">
         <div>
-        <h1>3D Product Modelling</h1>
+        <h1>3D Product Modeling</h1>
         <h2 style={{fontSize:"21px", fontWeight:'400'}}>Classic Pocket Watch</h2>
         </div>
         <img src={WatchGear} alt="watch gear" style={{width:"100%", maxWidth:"800px"}}/>
@@ -35,16 +35,16 @@ const Watch = () => {
 
       <section style={contentWidth}>
         <h1>Project Introduction</h1>
-        <p>This is a 3d modelling project which aims at modelling a branded pocket watch and promote the product with an advertisement</p>
+        <p>It is a 3d modeling project which aims at modeling a branded pocket watch and promote the product with an advertisement.</p>
       </section> 
 
       <section style={contentWidth}>
         <h1>Challenges and Solutions</h1>
-        <h4>Challenge: Complicated Model</h4>
-        <p>There are three main parts for the model process. They are the shell,the watch heart, and the UV of the watch face. To achieve the modelling goal, I started with collecting and observing pocket watch pictures in different angles. I also sketched out the model to generate the general idea of the model.</p>
-        <p>During the modelling process with Maya, I divided and grouped the layers to achieve three different parts of model.</p>
-        <h4>Challenge: Shots in Video</h4>
-        <p>There are various shots to create a product video. To solve the problems of shots, I broke down the ideas for the shots in a storyboard. I aslo marked down the duration and descriptions for each shot, which will help my next step of creating the video.</p>
+        <h4>Challenge: How to start with a complicated model</h4>
+        <p>There are three main parts to the model process. They are the shell, the watch heart, and the UV of the watch face. To achieve the modeling goal, I started by collecting and observing pocket watch pictures from different angles. I also sketched out the model to generate the general idea of the model.</p>
+        <p>During the Modeling process with Maya, I divided and grouped the layers to achieve three different parts of model.</p>
+        <h4>Challenge: How to achieve shots in Video</h4>
+        <p>There are various shots to create a product video. To solve the problems of shots, I broke down the ideas for the shots in a storyboard. I also marked down the duration and descriptions for each shot, which will help my next step of creating the video.</p>
         <div>
         <img src={WatchLayout} alt="watch layer" style={imgSize}/>
         <img src={WatchPorcess} alt="watch model process" style={imgSize}/>
