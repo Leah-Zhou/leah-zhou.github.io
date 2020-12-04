@@ -22,6 +22,7 @@ $connerRadius:5px;
   left:$left;
   right:$right;
   bottom:$bottom;
+
 }
 
 @mixin flexStyle($direction:row, $justify:flex-end){
@@ -350,9 +351,15 @@ nav {
   }
 }
 
+
 // GALLERY ***********************************
 .gallery{
-  @include marginAndPadding(200px 50px);
+  @include breakpoint("mobile"){
+    @include marginAndPadding(200px 50px);
+  }
+  @include breakpoint("laptop"){
+    margin-left: 100px;
+  }
   section{
     margin-bottom: 100px;
   }

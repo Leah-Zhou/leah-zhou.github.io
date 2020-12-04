@@ -401,9 +401,17 @@ nav ul {
   color: #EFCF47;
 }
 
-.gallery {
-  margin: 200px 50px;
-  padding: 0;
+@media (max-width: 900px) {
+  .gallery {
+    margin: 200px 50px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery {
+    margin-left: 100px;
+  }
 }
 
 .gallery section {

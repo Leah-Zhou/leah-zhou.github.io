@@ -59,7 +59,7 @@ const Gallery = () => {
   return (
     <div className="gallery">
       <section>
-        <h2 className="project-title">2D GRAPHIC ILLUSTRATION</h2>
+        <h2 className="project-title">2D Graphic Illustration</h2>
         <ul className="imgs-group">
           <li style={relativePosition}>
             <ul>
@@ -114,7 +114,7 @@ const Gallery = () => {
       </section>
 
       <section>
-        <h2>ICONS DESIGN</h2>
+        <h2 className="project-title">Icons Design</h2>
         <ul className="icon-imgs">
           {icons.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={heroImg}/></li>))}
         </ul>

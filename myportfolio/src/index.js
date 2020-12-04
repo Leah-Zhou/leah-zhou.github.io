@@ -13,6 +13,7 @@ import Teashop from './components/bubbletea';
 import GreenP from './components/greenP';
 import Watch from './components/watch';
 import Survey from './components/survey';
+import ScrollToTop from './components/toTop';
 
 
 function Page() {
@@ -20,6 +21,7 @@ function Page() {
   <div className="main-container">
     <Router>
      <Nav />
+      <ScrollToTop />
       <Switch>
       <Route path="/" exact component={Work} />
       <Route path="/about"  component={About} />
