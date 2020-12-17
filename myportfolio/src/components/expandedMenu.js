@@ -4,30 +4,28 @@ import React, { useState } from 'react';
  import Linkedin from './icons/linkedin.svg';
 //  import Pointer from './icons/pointer-block.svg';
  import {NavLink} from 'react-router-dom';
+ import {motion} from 'framer-motion';
 
 
+//  const closeBtnVariants={
+//    hidden:{opacity:0, y:-200},
+//    visible:i=>( {opacity:1,y:0,
+//      transition :{type:"spring", delay:i*0.8}
+//   })
+//  }
 const ExpandMenu = (props) => {
   const [opts]=useState([{name:'WORK',link:'/', key:'work'},{name:'ABOUT', link:'/about',key:'about'},{name:'GALLERY',link:'/gallery',key:'gallery'},]);
   
    const linksStyle={
      textDecoration:'none',
    }
-
-
-  //  const toggleMenu =()=>{
-  //    let expandMenu = document.querySelector(".expand-menu");
-  //     expandMenu.classList.toggle("expand-show");
-
-  //  }
-  // const [icons]=useState([{name:'{INS}', key:'ins'}, {name:'{CodePen}', key:'codepen'},{name:'{Linkedin}', key:'linkedin'},])
+   const boxes =[1, 1.5, 2]
 
   return ( 
     <div className="expand-menu">
-      <div className="btn-close" onClick={props.handleMenu}>
-        <div className="menu-square"></div>
-        <div className="menu-square"></div>
-        <div className="menu-square"></div>
-      </div>
+      {/* <div className="btn-close" onClick={props.handleMenu}>
+        {boxes.map((num)=>(<motion.div className="menu-square" variants={closeBtnVariants} custom={num} initial="hidden" animate="visible" ></motion.div>))}
+      </div> */}
       <ul>
        {opts.map(opt=>(<NavLink to={opt.link} style={linksStyle}  exact activeClassName="is-active" >
          <li style={{color:" #EFCF47"}} key={opt.key} onClick={props.handleMenu}> {opt.name}</li></NavLink>))}
