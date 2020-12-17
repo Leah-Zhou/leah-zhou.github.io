@@ -7,12 +7,6 @@ import React, { useState } from 'react';
  import {motion} from 'framer-motion';
 
 
-//  const closeBtnVariants={
-//    hidden:{opacity:0, y:-200},
-//    visible:i=>( {opacity:1,y:0,
-//      transition :{type:"spring", delay:i*0.8}
-//   })
-//  }
 const ExpandMenu = (props) => {
   const [opts]=useState([{name:'WORK',link:'/', key:'work'},{name:'ABOUT', link:'/about',key:'about'},{name:'GALLERY',link:'/gallery',key:'gallery'},]);
   
@@ -23,9 +17,6 @@ const ExpandMenu = (props) => {
 
   return ( 
     <div className="expand-menu">
-      {/* <div className="btn-close" onClick={props.handleMenu}>
-        {boxes.map((num)=>(<motion.div className="menu-square" variants={closeBtnVariants} custom={num} initial="hidden" animate="visible" ></motion.div>))}
-      </div> */}
       <ul>
        {opts.map(opt=>(<NavLink to={opt.link} style={linksStyle}  exact activeClassName="is-active" >
          <li style={{color:" #EFCF47"}} key={opt.key} onClick={props.handleMenu}> {opt.name}</li></NavLink>))}
