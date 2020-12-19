@@ -28,7 +28,8 @@ const Content = () => {
 
   return ( 
   <div>
-    <Parallax bgImage={BG}>
+    {/* <Parallax bgImage={BG}> */}
+    <div className="glass"></div>
     <ul className="container" >
       <Link to="/greenp project" style={removeStyle}>
       <li style={parallaxUp}>
@@ -60,7 +61,7 @@ const Content = () => {
     </ul>
     <ul>
     </ul>
-    </Parallax>
+    {/* </Parallax> */}
   </div> );
 }
  

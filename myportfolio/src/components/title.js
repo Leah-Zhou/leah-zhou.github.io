@@ -20,7 +20,7 @@ const titleVariants={
 }
 const Title = () => {
   return ( 
-    <div className="margin-top">
+    <div className="margin-top" style={{margin:'0 auto', maxWidth:'900px'}}>
        <div className="cube-container" >
          <motion.div className="cube" variants={cubeVariants} initial="hidden" animate="visible">
            <figure className="face front"></figure>
