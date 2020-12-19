@@ -10,6 +10,22 @@ import JourneyS from './imgs/GreenP-user journey Steve.png';
 import Comparation from './imgs/green p user flow comparation.jpg';
 import PlanFile from './files/usability test plan for Green P appliaction.pdf'
 import Poster from './files/Green P - Reseach Poster.pdf';
+import {motion} from 'framer-motion';
+
+const exitVariants ={
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1,
+    transition:{duration:1.5, delay:0.2}
+  },
+  exit:{opacity:0, y:'100vh',
+    transition:{ease:'easeInOut',duration:0.4}
+}
+}
+
+
 
 
 
@@ -20,7 +36,7 @@ const GreenP = () => {
   const alignLeft ={textAlign:"left", lineHeight:"1.6", fontWeight:"300"}
 
   return ( 
-    <div className="project-container">
+    <motion.div className="project-container" variants={exitVariants} initial="hidden" animate="visible" exit="exit">
     <section>
       <div className="project-title">
         <h1>UX Redesign Project</h1>
@@ -96,7 +112,7 @@ const GreenP = () => {
       </div>
       <a className="link-btn" href="https://xd.adobe.com/view/a9cd8f94-f88f-457b-4137-37992f784579-dffc/" target="_blank">Try Prototype</a>
     </section>
-   </div>
+   </motion.div>
 
    );
 }

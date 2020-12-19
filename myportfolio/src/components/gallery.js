@@ -23,9 +23,20 @@ import ChessFour from './imgs/chess-four.png';
 import ChessFive from './imgs/chess-five.png';
 import IconOne from './imgs/green-theme-icons.png';
 import IconTwo from './imgs/line-icons.png';
+import {motion} from 'framer-motion';
 
-
-
+const exitVariants ={
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1,
+    transition:{duration:1.5, delay:0.2}
+  },
+  exit:{opacity:0, y:'100vh',
+    transition:{ease:'easeInOut',duration:0.4}
+}
+}
 
 
 
@@ -57,7 +68,7 @@ const Gallery = () => {
   {img:IconTwo, key:"icons two", alt:"icons set"},])
 
   return (
-    <div className="gallery">
+    <motion.div className="gallery" variants={exitVariants} initial="hidden" animate="visible" exit="exit">
       <section>
         <h2 className="project-title">2D Graphic Illustration</h2>
         <ul className="imgs-group">
@@ -119,7 +130,7 @@ const Gallery = () => {
           {icons.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={heroImg}/></li>))}
         </ul>
       </section>
-    </div>
+    </motion.div>
     );
 }
  

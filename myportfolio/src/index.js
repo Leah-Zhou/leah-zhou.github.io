@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 import './style.css';
 import Nav from './components/nav';
 import reportWebVitals from './reportWebVitals';
@@ -14,6 +13,7 @@ import GreenP from './components/greenP';
 import Watch from './components/watch';
 import Survey from './components/survey';
 import ScrollToTop from './components/toTop';
+import SwitchComponent from './components/switch';
 
 
 function Page() {
@@ -22,7 +22,8 @@ function Page() {
     <Router>
      <Nav />
       <ScrollToTop />
-      <Switch>
+      <SwitchComponent />
+      {/* <Switch>
       <Route path="/" exact component={Work} />
       <Route path="/about"  component={About} />
       <Route path="/gallery" component={Gallery} />
@@ -32,7 +33,7 @@ function Page() {
       <Route path="/web survey project" component={Survey} />
 
       {/* <Route path="/contact" component={Contact} /> */}
-      </Switch>
+      {/* </Switch> */} */}
     </Router>
 
   </div> )

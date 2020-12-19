@@ -5,13 +5,27 @@ import Planter from './icons/planter.svg';
 import UXdesigner from './icons/uxdesigner.svg';
 import Resume from './files/Resume - Leah Zhou.pdf';
 import { Link, NavLink } from 'react-router-dom';
+import {motion} from 'framer-motion';
+
+const exitVariants ={
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1,
+    transition:{duration:1.5, delay:0.2}
+  },
+  exit:{opacity:0, y:'100vh',
+    transition:{ease:'easeInOut', duration:0.4}
+}
+}
 
 const About = () => {
   
   const linkStyle ={textDecoration:"none"}
   const linkFont ={color:"#EFCF47", fontWeight:"600"}
   return (
-    <section> 
+    <motion.section variants={exitVariants} initial="hidden" animate="visible" exit="exit"> 
       <section  style={{margin:'120px 80px', maxWidth:'600px'}}>
         <h1 style={{fontSize: '64px'}}>Hi,</h1>
         <p>My name is Leah Zhou, a front-end coder and a UX and UI designer with a full passion for creating beautiful and interactive design end digital experience. I also love photography and planting.
@@ -60,7 +74,7 @@ My goal is to connect people with brands and businesses via design. I believe a 
           <h1>Want to have a chat?</h1>
           <address><a href="mailto:leahzhoulz@gmail.com" className="btn-contact">CONTACT ME</a></address>
         </section>
-    </section>
+    </motion.section>
 
     );
 }

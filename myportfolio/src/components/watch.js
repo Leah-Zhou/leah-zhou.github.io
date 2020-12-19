@@ -11,6 +11,22 @@ import WatchLayout from './imgs/3d-layout.PNG';
 import WatchFraming from './imgs/3d-framing.PNG';
 import WatchPorcess from './imgs/3d-process.PNG';
 import ReactPlayer from 'react-player/youtube';
+import {motion} from 'framer-motion';
+
+const exitVariants ={
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1,
+    transition:{duration:1.5, delay:0.2}
+  },
+  exit:{opacity:0, y:'100vh',
+    transition:{ease:'easeInOut',duration:0.4}
+}
+}
+
+
 
 const Watch = () => {
 
@@ -24,7 +40,7 @@ const Watch = () => {
   {imgOne:WatchInside,keyOne:"Inside",altOne:"Inside",imgTwo:WatchInsideOutline,keyTwo:"Inside Outline", altTwo:" Inside Outline"}])
 
   return (
-    <div className="project-container" >
+    <motion.div className="project-container" variants={exitVariants} initial="hidden" animate="visible" exit="exit" >
       <section className="project-title">
         <div>
         <h1>3D Product Modeling</h1>
@@ -70,7 +86,7 @@ const Watch = () => {
           <ReactPlayer className="video" url="https://youtu.be/PYT1HSTKzgQ" width="100%" height="100%" controls/>
         </div>
       </section>
-    </div>
+    </motion.div>
 
     );
 }

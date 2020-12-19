@@ -2,6 +2,22 @@ import React from 'react';
 import HeroSurvey from './imgs/survey-hero.png';
 import Prototype from './imgs/survey-prototype.png';
 import Process from './imgs/survey-process.svg';
+import {motion} from 'framer-motion';
+
+const exitVariants ={
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1,
+    transition:{duration:1.5, delay:0.2}
+  },
+  exit:{opacity:0, y:'100vh',
+    transition:{ease:'easeInOut',duration:0.4}
+}
+}
+
+
 
 const Survey = () => {
    const imgSize ={width:"100%", maxWidth:"750px"}
@@ -9,7 +25,7 @@ const Survey = () => {
   const alignLeft ={textAlign:"left", lineHeight:"1.6", fontWeight:"300"}
 
   return (
- <div className="project-container">
+ <motion.div className="project-container" variants={exitVariants} initial="hidden" animate="visible" exit="exit">
     <section>
       <div className="project-title">
         <h1>Front End Development Project</h1>
@@ -45,7 +61,7 @@ const Survey = () => {
       <p>As a junior front end developer, I learned a lot from this project. One of the challenges in this project to me is making each button triggers correspondent content on the page. In this project, I used APIs to manipulate the DOM. I believe the better way to achieve it is using React to toggle different components. </p>
       <p>The other challenge is storting data from the users'inputs. In this project, I achieved it with local storage, and reused the data for the review page.Users could review and change their answers anytime during the survey.</p>
     </section>
-    </div>
+    </motion.div>
   );
 }
  

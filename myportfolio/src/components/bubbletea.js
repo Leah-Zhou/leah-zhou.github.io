@@ -15,6 +15,21 @@ import LogoIdeation from './imgs/bbtea-logos.png';
 import AnalysisOne from './imgs/analysisone.png';
 import AnalysisTwo from './imgs/analysistwo.png';
 // import DesignProcess from './imgs/design process.png';
+import {motion} from 'framer-motion';
+
+const exitVariants ={
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1,
+    transition:{duration:1.5, delay:0.2}
+  },
+  exit:{opacity:0, y:'100vh',
+    transition:{ease:'easeInOut',duration:0.4}
+}
+}
+
 
 
 
@@ -23,7 +38,7 @@ const Teashop = () => {
   const imgSize ={width:"100%", maxWidth:"500px"}
 
   return ( 
-    <div className="project-container">
+    <motion.div className="project-container" variants={exitVariants} initial="hidden" animate="visible" exit="exit">
       <section>
         <div className="project-title">
           <h1>Branding and Web Design</h1>
@@ -117,7 +132,7 @@ const Teashop = () => {
         </div>
      </section>
 
-    </div>
+    </motion.div>
    );
 }
  
