@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Controller from './imgs/controller.png';
 import ControllerOutline from './imgs/contoller-outline.PNG';
 import ControllerDetailOne from './imgs/controller-details-1.PNG';
@@ -24,6 +24,7 @@ import ChessFive from './imgs/chess-five.png';
 import IconOne from './imgs/green-theme-icons.png';
 import IconTwo from './imgs/line-icons.png';
 import {motion, useElementScroll, useTransform, useViewportScroll} from 'framer-motion';
+import {useInView} from 'react-intersection-observer';
 
 const exitVariants ={
   hidden:{
@@ -38,18 +39,23 @@ const exitVariants ={
 }
 }
 
-// const imgVariants ={
-//   hidden:{opacity:0},
-//   visible:custom=>({opacity:custom,
-//    transition:{duration:1,}
-//   })
-// }
-
+const imgsVariants ={
+  hidden:{
+    rotateY:90,
+    opacity:0,
+  },
+  visible:{
+    rotateY:0,
+    opacity:1,
+    transition :{duration:1.5, ease:'easeOut', delay:0.8},
+  }
+}
 
 const Gallery = () => {
   
   const relativePosition={position:"relative",top:"0px"}
-  const heroImg={width:"80vw", maxWidth:"600px", margin:"1em"}
+  const graphicImg={width:"80vw", maxWidth:"520px", margin:"10px",}
+  const heroImg={width:"80vw", maxWidth:"520px", margin:"10px"}
   const thumbnails={width:"30vw",maxWidth:"200px"}
 
   // const [controllerThumbnails] =useState([{img:ControllerDetailThree,key:'ControllerDetailThree',alt:'controller detail of handler'},{img:ControllerDetailOne,key:'ControllerDetailOne',alt:'controller detail of keyboard'},{img:ControllerDetailTwo,key:'ControllerDetailTwo',alt:'controller detail of handler'}])
@@ -67,24 +73,32 @@ const Gallery = () => {
   {img:ChessTwo,key:"chess two",alt:"chess overall"},
   {img:ChessThree,key:"chess three",alt:"chess details"},
   {img:ChessFour,key:"chess four",alt:"chess details"},
-  {img:ChessFive,key:"chess five",alt:"chess details"}])
+  // {img:ChessFive,key:"chess five",alt:"chess details"}
+])
 
   const [icons] =useState([{img:IconOne, key:"icons one", alt:"icons set"},
   {img:IconTwo, key:"icons two", alt:"icons set"},])
 
-  // const ref=useRef();
+
   const {scrollYProgress}=useViewportScroll();
 
-   const x=useTransform(scrollYProgress, [0,0.05,0.1], ['100vw','30vw','-5vw']);
-   const opacity=useTransform(scrollYProgress, [0,0.1,0.15], ['0','0.5','1']);
-
-   const watchX = useTransform(scrollYProgress, [0,0.16,0.2], ['100vw','30vw','0vw']);
-  
+   
+   const [ref, inView,entry]=useInView({threshold:0.3});
+    
+  //  const y=useTransform(scrollYProgress, entry, ['10vh','-10vh','0']);
+  //  const opacity=useTransform(scrollYProgress, entry, ['0','0.5','1']);  
 
 
   return (
     <motion.div className="gallery" variants={exitVariants} initial="hidden" animate="visible" exit="exit">
-      <section>
+      <section style={{textAlign:"center", marginTop:"100px" }}>
+        <h1>2D Graphic Illustration</h1>
+        <div className="imgs-group">
+          <motion.img src={Controller} alt="controller" style={graphicImg} variants={imgsVariants} whileHover={{scale:1.1}}/>
+          <motion.img src={Gameboy} alt="gameboy"  style={graphicImg} variants={imgsVariants} whileHover={{scale:1.1}}/>
+        </div>
+      </section>
+      {/* <section>
         <h1 className="project-title">2D Graphic Illustration</h1>
         <ul className="imgs-group">
           <li style={relativePosition}>
@@ -93,15 +107,15 @@ const Gallery = () => {
               <li><img src={ControllerOutline} alt="controller outline" style={heroImg} /></li>
             </ul>
           </li>
-          {/* <li>
+          <li>
             <ul className="thumbnails">
               {controllerThumbnails.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={thumbnails} /></li>))}
             </ul>
-          </li> */}
+          </li>
         </ul>
-      </section>
+      </section> */}
 
-      <motion.section style={{x,opacity}}>
+      {/* <motion.section style={{x,opacity}}>
         <ul className="imgs-group">
         <li style={relativePosition}>
             <ul>
@@ -109,37 +123,38 @@ const Gallery = () => {
               <li><img src={GameboyOutline} alt="gameboy outline" style={heroImg} /></li>
             </ul>
           </li>
-          {/* <li>
+          <li>
             <ul className="thumbnails">
             {gameboyThumbnails.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={thumbnails} /></li>))}
             </ul>
-          </li> */}
+          </li>
         </ul>
-      </motion.section>
+      </motion.section> */}
       
 
 
-      <motion.section style={{x:watchX,opacity}}>
+      <section>
         <h1 className="project-title">3D Modeling</h1>
         <ul>
         <li>
-            <ul>
+            <ul className="responsive-style">
               {watchThumbnails.map(each=>(
-                <div style={relativePosition}>
+                <motion.div style={relativePosition} ref={ref} initial={{opacity:0, y:"10vh"}} animate={{opacity:inView?1:0, y:inView?0:"10vh"}} transition={{duration:1.5}}> 
                    <li className="hero-img" key={each.keyOne} ><img src={each.imgOne} alt={each.altOne} style={heroImg} /></li>
                    <li key={each.keyTwo}><img src={each.imgTwo} alt={each.altTwo} style={heroImg} /></li>
-                </div>
+                </motion.div>
               ))}
             </ul>
           </li>
         </ul>
-      </motion.section>
+      </section>
 
       <section>
-        <ul>
+        <ul className="responsive-style">
           {chess.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={heroImg}/></li>))}
         </ul>
       </section>
+
 
       <section>
         <h1 className="project-title">Icons Design</h1>
