@@ -80,13 +80,14 @@ const Gallery = () => {
   {img:IconTwo, key:"icons two", alt:"icons set"},])
 
 
-  const {scrollYProgress}=useViewportScroll();
+ 
 
    
-   const [ref, inView,entry]=useInView({threshold:0.3});
-    
-  //  const y=useTransform(scrollYProgress, entry, ['10vh','-10vh','0']);
-  //  const opacity=useTransform(scrollYProgress, entry, ['0','0.5','1']);  
+   const [ref, inView,entry]=useInView({threshold:0.2});
+
+   const {scrollYProgress}=useViewportScroll();
+   const x=useTransform(scrollYProgress, [0.8,0.85,0.9], ['40vw','20vw','0']);
+   const opacity=useTransform(scrollYProgress, [0.8,0.85,0.9],  ['0','0.5','1']);  
 
 
   return (
@@ -137,30 +138,31 @@ const Gallery = () => {
         <h1 className="project-title">3D Modeling</h1>
         <ul>
         <li>
-            <ul className="responsive-style">
+            <ul className="responsive-style" ref={ref}>
               {watchThumbnails.map(each=>(
-                <motion.div style={relativePosition} ref={ref} initial={{opacity:0, y:"10vh"}} animate={{opacity:inView?1:0, y:inView?0:"10vh"}} transition={{duration:1.5}}> 
+                <motion.div style={relativePosition} initial={{opacity:0, y:"10vh"}} animate={{opacity:inView?1:0, y:inView?0:"10vh"}} transition={{duration:1.5}}> 
                    <li className="hero-img" key={each.keyOne} ><img src={each.imgOne} alt={each.altOne} style={heroImg} /></li>
                    <li key={each.keyTwo}><img src={each.imgTwo} alt={each.altTwo} style={heroImg} /></li>
                 </motion.div>
               ))}
+              {chess.map(each=>(<motion.li key={each.key}  initial={{opacity:0, y:"10vh"}} animate={{opacity:inView?1:0, y:inView?0:"10vh"}} transition={{duration:1.5}}><img src={each.img} alt={each.alt} style={heroImg}/></motion.li>))}
             </ul>
           </li>
         </ul>
       </section>
 
-      <section>
+      {/* <section>
         <ul className="responsive-style">
           {chess.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={heroImg}/></li>))}
         </ul>
-      </section>
+      </section> */}
 
 
       <section>
         <h1 className="project-title">Icons Design</h1>
-        <ul className="icon-imgs">
+        <motion.ul className="icon-imgs" style={{x,opacity}}>
           {icons.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={heroImg}/></li>))}
-        </ul>
+        </motion.ul>
       </section>
     </motion.div>
     );

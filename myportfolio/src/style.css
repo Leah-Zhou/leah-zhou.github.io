@@ -523,6 +523,15 @@ nav ul {
   }
 }
 
+@media (min-width: 900px) {
+  .icon-imgs {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
 .project-container {
   text-align: center;
   margin: 120px 80px;

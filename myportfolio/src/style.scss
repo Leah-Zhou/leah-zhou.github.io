@@ -397,12 +397,12 @@ nav {
     @include gridStyle(1fr 1fr, 1fr 1fr );
   }
 }
-// .icon-imgs{
-//   @include breakpoint("laptop"){
-//     @include gridStyle(1fr 1fr );
+.icon-imgs{
+  @include breakpoint("laptop"){
+    @include gridStyle(1fr 1fr );
 
-//   }
-// }
+  }
+}
 
 
 // project shared style**********************
