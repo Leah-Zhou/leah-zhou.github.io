@@ -374,15 +374,15 @@ nav {
   @include breakpoint("mobile"){
     @include flexStyle(column,center);
   };
-  @include breakpoint("laptop"){
-    @include flexStyle(row,center);
-  }
+  // @include breakpoint("laptop"){
+  //   @include flexStyle(row,center);
+  // }
 }
-.thumbnails{
-  @include breakpoint("mobile"){
-    @include flexStyle(row,space-around);
-  }
-}
+// .thumbnails{
+//   @include breakpoint("mobile"){
+//     @include flexStyle(row,space-around);
+//   }
+// }
 
 .hero-img{
   position: absolute;
@@ -392,17 +392,17 @@ nav {
 .hero-img:hover{
   opacity: 0;
 }
-.responsive-style{
-  @include breakpoint("laptop"){
-    @include gridStyle(1fr 1fr, 1fr 1fr );
-  }
-}
-.icon-imgs{
-  @include breakpoint("laptop"){
-    @include gridStyle(1fr 1fr );
+// .responsive-style{
+//   @include breakpoint("laptop"){
+//     @include gridStyle(1fr 1fr, 1fr 1fr );
+//   }
+// }
+// .icon-imgs{
+//   @include breakpoint("laptop"){
+//     @include gridStyle(1fr 1fr );
 
-  }
-}
+//   }
+// }
 
 
 // project shared style**********************

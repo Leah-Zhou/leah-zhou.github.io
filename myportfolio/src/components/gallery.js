@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Controller from './imgs/controller.png';
 import ControllerOutline from './imgs/contoller-outline.PNG';
 import ControllerDetailOne from './imgs/controller-details-1.PNG';
@@ -23,7 +23,7 @@ import ChessFour from './imgs/chess-four.png';
 import ChessFive from './imgs/chess-five.png';
 import IconOne from './imgs/green-theme-icons.png';
 import IconTwo from './imgs/line-icons.png';
-import {motion} from 'framer-motion';
+import {motion, useElementScroll, useTransform, useViewportScroll} from 'framer-motion';
 
 const exitVariants ={
   hidden:{
@@ -38,16 +38,21 @@ const exitVariants ={
 }
 }
 
-
+// const imgVariants ={
+//   hidden:{opacity:0},
+//   visible:custom=>({opacity:custom,
+//    transition:{duration:1,}
+//   })
+// }
 
 
 const Gallery = () => {
   
   const relativePosition={position:"relative",top:"0px"}
-  const heroImg={width:"80vw", maxWidth:"500px", margin:"1em"}
+  const heroImg={width:"80vw", maxWidth:"600px", margin:"1em"}
   const thumbnails={width:"30vw",maxWidth:"200px"}
 
-  const [controllerThumbnails] =useState([{img:ControllerDetailThree,key:'ControllerDetailThree',alt:'controller detail of handler'},{img:ControllerDetailOne,key:'ControllerDetailOne',alt:'controller detail of keyboard'},{img:ControllerDetailTwo,key:'ControllerDetailTwo',alt:'controller detail of handler'}])
+  // const [controllerThumbnails] =useState([{img:ControllerDetailThree,key:'ControllerDetailThree',alt:'controller detail of handler'},{img:ControllerDetailOne,key:'ControllerDetailOne',alt:'controller detail of keyboard'},{img:ControllerDetailTwo,key:'ControllerDetailTwo',alt:'controller detail of handler'}])
 
   const[gameboyThumbnails] =useState([{img:GameboyTNTwo ,key:"GameboyTNTwo " , alt:"gameboy thumbnails"},{img:GameboyTNOne ,key:"GameboyTNOne" , alt:"gameboy thumbnails"}])
 
@@ -67,10 +72,20 @@ const Gallery = () => {
   const [icons] =useState([{img:IconOne, key:"icons one", alt:"icons set"},
   {img:IconTwo, key:"icons two", alt:"icons set"},])
 
+  // const ref=useRef();
+  const {scrollYProgress}=useViewportScroll();
+
+   const x=useTransform(scrollYProgress, [0,0.05,0.1], ['100vw','30vw','-5vw']);
+   const opacity=useTransform(scrollYProgress, [0,0.1,0.15], ['0','0.5','1']);
+
+   const watchX = useTransform(scrollYProgress, [0,0.16,0.2], ['100vw','30vw','0vw']);
+  
+
+
   return (
     <motion.div className="gallery" variants={exitVariants} initial="hidden" animate="visible" exit="exit">
       <section>
-        <h2 className="project-title">2D Graphic Illustration</h2>
+        <h1 className="project-title">2D Graphic Illustration</h1>
         <ul className="imgs-group">
           <li style={relativePosition}>
             <ul>
@@ -78,15 +93,15 @@ const Gallery = () => {
               <li><img src={ControllerOutline} alt="controller outline" style={heroImg} /></li>
             </ul>
           </li>
-          <li>
+          {/* <li>
             <ul className="thumbnails">
               {controllerThumbnails.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={thumbnails} /></li>))}
             </ul>
-          </li>
+          </li> */}
         </ul>
       </section>
 
-      <section>
+      <motion.section style={{x,opacity}}>
         <ul className="imgs-group">
         <li style={relativePosition}>
             <ul>
@@ -94,19 +109,21 @@ const Gallery = () => {
               <li><img src={GameboyOutline} alt="gameboy outline" style={heroImg} /></li>
             </ul>
           </li>
-          <li>
+          {/* <li>
             <ul className="thumbnails">
             {gameboyThumbnails.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={thumbnails} /></li>))}
             </ul>
-          </li>
+          </li> */}
         </ul>
-      </section>
+      </motion.section>
+      
 
-      <section>
-        <h2 className="project-title">3D Modeling</h2>
+
+      <motion.section style={{x:watchX,opacity}}>
+        <h1 className="project-title">3D Modeling</h1>
         <ul>
         <li>
-            <ul className="thumbnails responsive-style">
+            <ul>
               {watchThumbnails.map(each=>(
                 <div style={relativePosition}>
                    <li className="hero-img" key={each.keyOne} ><img src={each.imgOne} alt={each.altOne} style={heroImg} /></li>
@@ -116,16 +133,16 @@ const Gallery = () => {
             </ul>
           </li>
         </ul>
-      </section>
+      </motion.section>
 
       <section>
-        <ul className="responsive-style">
+        <ul>
           {chess.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={heroImg}/></li>))}
         </ul>
       </section>
 
       <section>
-        <h2 className="project-title">Icons Design</h2>
+        <h1 className="project-title">Icons Design</h1>
         <ul className="icon-imgs">
           {icons.map(each=>(<li key={each.key}><img src={each.img} alt={each.alt} style={heroImg}/></li>))}
         </ul>
