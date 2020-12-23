@@ -24,6 +24,18 @@
   }
 }
 
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .fade-in {
   -webkit-animation-name: fade;
           animation-name: fade;
@@ -54,9 +66,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#1E2D3A), to(#000000));
-  background-image: linear-gradient(to bottom right, #1E2D3A, #000000);
-  color: #FCFCFA;
+  color: #000000;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
@@ -67,7 +77,7 @@ body {
 body P {
   font-size: 15px;
   font-weight: 200;
-  color: #FCFCFA;
+  color: #000000;
   line-height: 1.8;
 }
 
@@ -81,8 +91,9 @@ body li {
 }
 
 body h1 {
+  font-family: 'Poppins','Open Sans', sans-serif;
   font-weight: 600;
-  color: #FCFCFA;
+  color: #000000;
   margin: 1em;
   padding: 0;
   letter-spacing: 0.2em;
@@ -117,9 +128,9 @@ body button {
   nav {
     position: fixed;
     top: 0;
-    width: 100%;
-    background-color: #152029;
-    z-index: 400;
+    width: 100vw;
+    background-color: white;
+    z-index: 4;
   }
 }
 
@@ -142,10 +153,7 @@ nav ul {
 }
 
 .icon-logo {
-  opacity: 0;
-  width: 70px;
-  margin: 1em;
-  padding: 0;
+  width: 60px;
   -webkit-animation-name: fade;
           animation-name: fade;
   -webkit-animation-duration: 1s;
@@ -156,6 +164,8 @@ nav ul {
           animation-delay: 0s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  margin: 10px;
+  padding: 0;
 }
 
 .icon {
@@ -179,8 +189,8 @@ nav ul {
 }
 
 .menu-square {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   background-color: #EFCF47;
   border: 1px solid #000000;
   -webkit-transition: -webkit-transform 0.5s;
@@ -197,7 +207,7 @@ nav ul {
     overflow: hidden;
     -webkit-transition: height .4s;
     transition: height .4s;
-    background-color: #152029;
+    background-color: #FCFCFA;
   }
 }
 
@@ -229,7 +239,7 @@ nav ul {
 @media (min-width: 900px) {
   .expand-menu li {
     font-size: 14px;
-    color: #FCFCFA;
+    color: #000000;
   }
 }
 
@@ -247,7 +257,9 @@ nav ul {
   width: 400px;
   height: 200px;
   display: block;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: -10vw;
   -webkit-perspective: 1000px;
           perspective: 1000px;
   top: 50px;
@@ -269,7 +281,7 @@ nav ul {
   height: 100%;
   display: block;
   background-color: rgba(252, 252, 250, 0);
-  border: rgba(252, 252, 250, 0.5) solid 1px;
+  border: rgba(128, 128, 128, 0.5) solid 1px;
 }
 
 .front {
@@ -315,13 +327,24 @@ nav ul {
   text-align: center;
 }
 
-.margin-top h4 {
+.margin-top h3 {
   font-weight: 600;
-  color: #FCFCFA;
+  color: #000000;
 }
 
 .small-words {
   font-size: 10px;
+}
+
+.slogon {
+  width: 90vw;
+}
+
+.slogon path {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  -webkit-animation: dash 7s 1s ease forwards;
+          animation: dash 7s 1s ease forwards;
 }
 
 .container {
@@ -361,7 +384,7 @@ nav ul {
 .project-title {
   font-size: 16px;
   font-weight: 400;
-  color: #FCFCFA;
+  color: #000000;
   letter-spacing: 2px;
   text-align: center;
 }
@@ -544,7 +567,7 @@ nav ul {
 
 @media (min-width: 900px) {
   .project-container h1 {
-    font-size: 32px;
+    font-size: 48px;
   }
 }
 
