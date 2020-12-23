@@ -1,19 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 
 const Slogon = () => {
-
-    // const slogonPaths = document.querySelectorAll ('.slogon path');
-
-    // //  const [allpath, setAllpath]=useState([]);
-    // for(let i=0; i<slogonPaths.length; i++){
-    //   const pathLengths= Math.ceil(slogonPaths[i].getTotalLength())
-    //   //  setAllpath(pathLengths)
-
-    //   console.log(slogonPaths.length)
-
-    //   // slogonPaths[i].style.strokeDasharray=100;
-    //   // slogonPaths[i].style.strokeDashoffset=100;
-    // }
 
   return ( 
     <div>
